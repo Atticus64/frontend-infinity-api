@@ -40,3 +40,9 @@ const formatter = new JSONFormatter(initialData, 3,{
   theme: 'white'
 });
 div.appendChild(formatter.render());
+
+export {
+  $,
+  apiUrl,
+  endp
+}

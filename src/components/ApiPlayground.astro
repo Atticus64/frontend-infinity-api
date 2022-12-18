@@ -1,15 +1,31 @@
 ---
+import Icon from "astro-icon"
 ---
 
 <div class="flex justify-center">
   <form class="form-send-api">
-    <div class="flex items-center">
-      <label for="">/api</label>
-      <input type="text" placeholder="/" class="input-api" />
+    <div class="flex items-center row w-full">
+      <div class="md:w-2/3">
+        <div
+          class="block font-bold w-60 mb-1 md:mb bg-slate-400 py-2 rounded-sm text-neutral-200 px-2"
+        >
+          <label for="">the-infinity-train-api/api</label>
+        </div>
+      </div>
+      <div class="md:w-2/3 p-2">
+        <input
+          type="text"
+          class="input-api bg-gray-200 appearance-none border-2 border-gray-200 rounded w-80 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          placeholder="/"
+        />
+      </div>
       <button
-        class="btn-send-api bg-teal-400 p-3 rounded-md hover:scale-105 transition-all"
-      >
-        Send ✈
+        type="submit"
+        class="btn-send-api flex bg-teal-400 p-3 rounded-md hover:scale-105 transition-all"
+        >Send<Icon name="ph:paper-plane-right-fill" />
+      </button>
+      <button type="button" class="btn-clipboard">
+        <img class="icon-clip m-2" src="./icons/clipboard.svg" alt="" />
       </button>
     </div>
   </form>
@@ -20,6 +36,7 @@
 </div>
 
 <script src="../api/getResponse.js"></script>
+<script src="../utils/clipboard.js"></script>
 
 <style>
   .response {
@@ -27,5 +44,25 @@
     min-width: 50%;
     width: 25rem;
     max-width: 10rem;
+  }
+
+  .btn-send-api {
+    width: 9rem;
+    height: 2.6rem;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .btn-send-api svg {
+    width: 2.3rem;
+    padding: 0.3rem;
+  }
+
+  .btn-clipboard {
+    width: 100%;
+  }
+
+  .icon-clip {
+    width: 2rem;
   }
 </style>
