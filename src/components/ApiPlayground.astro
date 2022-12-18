@@ -1,0 +1,31 @@
+---
+---
+
+<div class="flex justify-center">
+  <form class="form-send-api">
+    <div class="flex items-center">
+      <label for="">/api</label>
+      <input type="text" placeholder="/" class="input-api" />
+      <button
+        class="btn-send-api bg-teal-400 p-3 rounded-md hover:scale-105 transition-all"
+      >
+        Send ✈
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="flex justify-center">
+  <div class="response my-8 p-4"></div>
+</div>
+
+<script src="../api/getResponse.js"></script>
+
+<style>
+  .response {
+    border: 2px solid #0002;
+    min-width: 50%;
+    width: 25rem;
+    max-width: 10rem;
+  }
+</style>
