@@ -1,17 +1,21 @@
 import { $, apiUrl, endp } from '../api/getResponse'
 
 const clip = $('.btn-clipboard')
-const iconImg = $('.icon-clip')
+const iconClip = $('.clip-n')
+const iconClipCheck = $('.clip-check')
 
 clip.addEventListener('click', () => {
    
-  iconImg.src = './icons/clipboard-check.svg'
 
   updateClipboard(`${apiUrl}${endp.value}`)
 
+  iconClip.classList.add('hidden')
+  iconClipCheck.classList.remove('hidden')
+  
   setTimeout(() => {
-    iconImg.src = './icons/clipboard.svg'
-  }, 1000)
+    iconClip.classList.remove('hidden')
+    iconClipCheck.classList.add('hidden')
+  }, 500)
 
   
 

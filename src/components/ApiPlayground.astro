@@ -25,7 +25,8 @@ import Icon from "astro-icon"
         >Send<Icon name="ph:paper-plane-right-fill" />
       </button>
       <button type="button" class="btn-clipboard">
-        <img class="icon-clip m-2" src="./icons/clipboard.svg" alt="" />
+        <Icon name="mdi:clipboard-outline" class="clip-n" />
+        <Icon name="mdi:clipboard-check-outline" class="hidden clip-check" />
       </button>
     </div>
   </form>
@@ -60,6 +61,10 @@ import Icon from "astro-icon"
 
   .btn-clipboard {
     width: 100%;
+  }
+
+  .hidden {
+    display: none;
   }
 
   .icon-clip {
