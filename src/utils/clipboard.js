@@ -1,23 +1,19 @@
 import { $, apiUrl, endp } from '../api/getResponse'
 
 const clip = $('.btn-clipboard')
-const iconClip = $('.clip-n')
-const iconClipCheck = $('.clip-check')
 
 clip.addEventListener('click', () => {
    
-
   updateClipboard(`${apiUrl}${endp.value}`)
 
-  iconClip.classList.add('hidden')
-  iconClipCheck.classList.remove('hidden')
-  
-  setTimeout(() => {
-    iconClip.classList.remove('hidden')
-    iconClipCheck.classList.add('hidden')
-  }, 500)
+  clip.ariaLabel = "Copied"
+  clip.classList.add('hint--success')
+})
 
-  
+clip.addEventListener('mouseleave', () => {
+
+  clip.ariaLabel = "Copy to clipboard"
+  clip.classList.remove('hint--success')
 
 })
 
