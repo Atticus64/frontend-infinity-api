@@ -4,31 +4,39 @@ import Icon from "astro-icon"
 
 <div class="flex justify-center">
   <form class="form-send-api">
-    <div class="flex items-center row w-full">
-      <div class="md:w-2/3">
+    <div class="flex justify-center align-middle">
+      <div>
         <div
-          class="block font-bold w-60 mb-1 md:mb bg-slate-400 py-2 rounded-sm text-neutral-200 px-2"
+          class="block font-bold w-60 md:mb bg-slate-400 py-2 rounded-sm text-neutral-200 pl-2 pr-0"
         >
-          <label for="">the-infinity-train-api/api</label>
+          <label for="inputApi">the-infinity-train-api/api</label>
         </div>
       </div>
-      <div class="md:w-2/3 p-2">
+      <div class="px-2">
         <input
+          id="inputApi"
           type="text"
           class="input-api bg-gray-200 appearance-none border-2 border-gray-200 rounded w-80 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
           placeholder="/"
         />
       </div>
       <button
-        type="submit"
-        class="btn-send-api flex bg-teal-400 p-3 rounded-md hover:scale-105 transition-all"
-        >Send<Icon name="ph:paper-plane-right-fill" />
+        type="button"
+        class="btn-clipboard hint--top"
+        aria-label="Copy to clipboard"
+      >
+        <Icon
+          name="mdi:clipboard-outline"
+          class="icon-clip clip-n hover:scale-95"
+        />
       </button>
-      <button type="button" class="btn-clipboard">
-        <Icon name="mdi:clipboard-outline" class="clip-n" />
-        <Icon name="mdi:clipboard-check-outline" class="hidden clip-check" />
+      <button
+        type="submit"
+        class="btn-send-api flex text-center justify-center text-purple-400 rounded-md hover:scale-110 transition-all"
+        ><Icon name="ph:paper-plane-right-fill" />
       </button>
     </div>
+    <div class="pt-2 flex justify-center p-0"></div>
   </form>
 </div>
 
@@ -48,19 +56,15 @@ import Icon from "astro-icon"
   }
 
   .btn-send-api {
-    width: 9rem;
-    height: 2.6rem;
+    width: 3rem;
+    text-align: center;
+    height: 2.4rem;
     align-items: center;
-    padding: 1rem;
   }
 
   .btn-send-api svg {
-    width: 2.3rem;
+    width: 2.5rem;
     padding: 0.3rem;
-  }
-
-  .btn-clipboard {
-    width: 100%;
   }
 
   .hidden {
@@ -68,6 +72,6 @@ import Icon from "astro-icon"
   }
 
   .icon-clip {
-    width: 2rem;
+    width: 2.5rem;
   }
 </style>
