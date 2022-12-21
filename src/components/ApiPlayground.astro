@@ -9,15 +9,15 @@ json = JSON.stringify(JSON.parse(json), null, 2)
 
 <div class="flex justify-center">
   <form class="form-send-api">
-    <div class="flex justify-center align-middle">
-      <div>
+    <div class="flex justify-center align-middle mainApi">
+      <div class="label-api">
         <div
           class="block font-bold w-60 md:mb bg-slate-400 py-2 rounded-sm text-neutral-200 pl-2 pr-0"
         >
           <label for="inputApi">the-infinity-train-api/api</label>
         </div>
       </div>
-      <div class="px-2">
+      <div class="input-container px-2">
         <input
           id="inputApi"
           type="text"
@@ -25,27 +25,29 @@ json = JSON.stringify(JSON.parse(json), null, 2)
           placeholder="/"
         />
       </div>
-      <button
-        type="button"
-        class="btn-clipboard hint--top"
-        aria-label="Copy to clipboard"
-      >
-        <Icon
-          name="mdi:clipboard-outline"
-          class="icon-clip clip-n hover:scale-95"
-        />
-      </button>
-      <button
-        type="submit"
-        class="btn-send-api flex text-center justify-center text-purple-400 rounded-md hover:scale-110 transition-all"
-        ><Icon name="ph:paper-plane-right-fill" />
-      </button>
+      <div class="flex justify-center align-middle">
+        <button
+          type="button"
+          class="btn-clipboard hint--top"
+          aria-label="Copy to clipboard"
+        >
+          <Icon
+            name="mdi:clipboard-outline"
+            class="icon-clip clip-n hover:scale-95"
+          />
+        </button>
+        <button
+          type="submit"
+          class="btn-send-api flex text-center justify-center text-purple-400 rounded-md hover:scale-110 transition-all"
+          ><Icon name="ph:paper-plane-right-fill" />
+        </button>
+      </div>
     </div>
     <div class="pt-2 flex justify-center p-0"></div>
   </form>
 </div>
 
-<div class="flex justify-center">
+<div class="prism-div flex justify-center">
   <Prism
     class="prism-container m-3 language-json json"
     lang="json"
@@ -59,7 +61,6 @@ json = JSON.stringify(JSON.parse(json), null, 2)
 <style>
   .prism-container {
     border: 2px solid #0002;
-    min-width: 30rem;
     width: max-content;
     padding: 2rem;
     max-width: 60rem;
@@ -83,5 +84,26 @@ json = JSON.stringify(JSON.parse(json), null, 2)
 
   .icon-clip {
     width: 2.5rem;
+  }
+
+  @media (min-width: 250px) and (max-width: 915px) {
+    .mainApi {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .prism-container {
+      margin: 1rem;
+      min-width: none;
+    }
+
+    .input-container {
+      margin-bottom: 1rem;
+    }
+
+    .label-api {
+      margin-bottom: 1rem;
+    }
   }
 </style>
