@@ -1,5 +1,10 @@
 ---
 import Icon from "astro-icon"
+import { Prism } from "@astrojs/prism"
+
+let resp = await fetch("https://the-infinity-train-api.deno.dev/api/test")
+let json = await resp.text()
+json = JSON.stringify(JSON.parse(json), null, 2)
 ---
 
 <div class="flex justify-center">
@@ -41,18 +46,23 @@ import Icon from "astro-icon"
 </div>
 
 <div class="flex justify-center">
-  <div class="response my-8 p-4"></div>
+  <Prism
+    class="prism-container m-3 language-json json"
+    lang="json"
+    code={json}
+  />
 </div>
 
 <script src="../api/getResponse.js"></script>
 <script src="../utils/clipboard.js"></script>
 
 <style>
-  .response {
+  .prism-container {
     border: 2px solid #0002;
-    min-width: 50%;
-    width: 25rem;
-    max-width: 10rem;
+    min-width: 30rem;
+    width: max-content;
+    padding: 2rem;
+    max-width: 60rem;
   }
 
   .btn-send-api {
