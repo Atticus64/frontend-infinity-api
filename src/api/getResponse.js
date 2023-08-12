@@ -13,7 +13,8 @@ const main = () => {
 
 const getResponseInfinityTrain = async (endpoint) => {
 
-  const resp = await fetch(`${apiUrl}${endpoint}?pretty`)
+  const resp = await fetch(`${apiUrl}${endpoint}&pretty`)
+  
   let text = await resp.text()
   if (!text.includes('\n')) text = JSON.stringify(JSON.parse(text), null, 2)
   return text
